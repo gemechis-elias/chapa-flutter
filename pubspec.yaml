@@ -1,0 +1,26 @@
+name: chapasdk
+description: Chapa flutter library to accept payment via Card, Bank or telebirr etc.
+version: 0.0.5
+homepage: https://github.com/chapa-et/chapa-flutter
+
+environment:
+  sdk: '>=2.19.3 <4.0.0'
+  flutter: ">=1.17.0"
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http: ^1.2.2
+  flutter_inappwebview: ^6.0.0
+  connectivity_plus: ^6.0.5
+  fluttertoast: ^8.2.8
+  mockito: ^5.4.3
+  uuid: ^4.4.2
+
+dependency_overrides:
+  webview_flutter_android: 3.16.1
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
