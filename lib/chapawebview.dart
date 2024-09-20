@@ -12,16 +12,16 @@ class ChapaWebView extends StatefulWidget {
   final String url;
   final String fallBackNamedUrl;
   final String ttx;
-  final Map<String, dynamic> order;
-  final List<Map<String, dynamic>> products;
+  final Map<String, dynamic>? order;
+  final List<Map<String, dynamic>>? products;
 
   const ChapaWebView(
       {Key? key,
       required this.url,
       required this.fallBackNamedUrl,
       required this.ttx,
-      required this.order,
-      required this.products})
+      this.order,
+      this.products})
       : super(key: key);
 
   @override
@@ -73,8 +73,8 @@ class _ChapaWebViewState extends State<ChapaWebView> {
         'message': message,
         'ttx': ttx,
         'status': res,
-        'order': widget.order,
-        'products': widget.products
+        'order': widget.order ?? {},
+        'products': widget.products ?? [],
       },
     );
   }

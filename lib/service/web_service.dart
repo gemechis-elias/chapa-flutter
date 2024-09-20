@@ -22,14 +22,14 @@ Future<Object> intilizeMyPayment(
   String customDescription,
   String fallBackNamedRoute,
   String mobile,
-  Map<String, dynamic> meta,
-  Map<String, dynamic> order,
-  List<Map<String, dynamic>> products,
+  Map<String, dynamic>? meta,
+  Map<String, dynamic>? order,
+  List<Map<String, dynamic>>? products,
 ) async {
   String generatedTransactionRef = generateTransactionReference(companyName);
 
   // Flatten the meta map
-  final flattenedMeta = flattenMeta(meta);
+  final flattenedMeta = flattenMeta(meta ?? {});
 
   // Prepare the request body
   final requestBody = {
@@ -58,7 +58,7 @@ Future<Object> intilizeMyPayment(
     showToast(jsonResponse['message']);
   } else if (response.statusCode == 200) {
     ResponseData res = ResponseData.fromJson(jsonResponse);
-    log("+++++++++++++++" + res.data.checkoutUrl.toString());
+    log("CHAPA CHECKOUT URL: ${res.data.checkoutUrl}");
     Navigator.push(
       context,
       MaterialPageRoute(

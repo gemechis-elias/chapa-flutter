@@ -17,9 +17,9 @@ class Chapa {
   String desc;
   String namedRouteFallBack;
   String mobile;
-  Map<String, dynamic> meta;
-  Map<String, dynamic> order;
-  List<Map<String, dynamic>> products;
+  Map<String, dynamic>? meta;
+  Map<String, dynamic>? order;
+  List<Map<String, dynamic>>? products;
 
   Chapa.paymentParameters({
     required this.context,
@@ -34,9 +34,9 @@ class Chapa {
     required this.desc,
     required this.namedRouteFallBack,
     required this.mobile,
-    required this.meta,
-    required this.order,
-    required this.products,
+     this.meta,
+     this.order,
+     this.products,
   }) {
     validateKeys();
     currency = currency.toUpperCase();
@@ -79,10 +79,7 @@ class Chapa {
       showErrorToast(ChapaStrings.mobile);
       return false;
     }
-    if (meta.isEmpty) {
-      showErrorToast(ChapaStrings.meta);
-      return false;
-    }
+   
 
     return true;
   }
